@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bedroom Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #f1c40f;
+      margin-top: 20px;
+    }
+
+    /* زر الرجوع */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      background-color: #f1c40f;
+      color: #111;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #c8a600;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 80px; /* علشان ما يغطي زر الرجوع */
+    }
+
+    .gallery img {
+      width: 220px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox style */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close, .prev, .next {
+      position: absolute;
+      color: white;
+      font-size: 2em;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .close { top: 20px; right: 30px; }
+    .prev { left: 5%; }
+    .next { right: 5%; }
+  </style>
+</head>
+<body>
+
+  <button class="back-button" onclick="window.location.href='index.html'">← Back</button>
+
+  <h1>Bedroom Collection</h1>
+
+  <div class="gallery">
+    <img src="bed1.jpg" alt="Bedroom 1">
+    <img src="bed2.jpg" alt="Bedroom 2">
+    <img src="bed3.jpg" alt="Bedroom 3">
+    <img src="bed4.jpg" alt="Bedroom 4">
+    <img src="bed5.jpg" alt="Bedroom 5">
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+    <img id="lightbox-img" src="">
+    <span class="next" onclick="changeImage(1)">&#10095;</span>
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        currentIndex = index;
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    function changeImage(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      if (currentIndex >= images.length) currentIndex = 0;
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    window.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  </script>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/96179192370?text=Hello%20Farid%20Furniture!%20I%20would%20like%20to%20ask%20about%20a%20product." 
+   class="whatsapp-float" target="_blank">
+  💬
+  <span class="whatsapp-text">Chat with us</span>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    background-color: #25d366;
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 999;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.05);
+  }
+
+  .whatsapp-text {
+    font-size: 16px;
+    font-weight: bold;
+  }
+</style>
+
+
+</body>
+</html>

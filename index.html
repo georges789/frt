@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farid Furniture</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2f2f2f; /* رمادي غامق */
+      overflow: hidden;
+    }
+
+    header {
+      position: absolute;
+      top: 25px;
+      left: 40px;
+      color: #FFD700; /* أصفر ذهبي */
+      font-size: 30px;
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    nav {
+      position: absolute;
+      top: 35px;
+      right: 50px;
+      z-index: 2;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #FFD700; /* أصفر ذهبي */
+      font-size: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #b8860b; /* لون أغمق شوي عند المرور */
+    }
+
+    .background {
+      width: 100vw;
+      height: 100vh;
+      background-image: url("salon.jpg"); /* تأكد إنو اسم الصورة مضبوط */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain; /* تبين الصورة كاملة */
+      background-color: #2f2f2f; /* رمادي غامق كخلفية */
+    }
+  </style>
+</head>
+<body>
+  <header>Farid Furniture</header>
+
+  <nav>
+    <a href="livingroom.html">Living Room</a>
+    <a href="bedroom.html">Bedroom</a>
+  </nav>
+
+  <div class="background"></div>
+<a href="https://wa.me/96179192370?text=Hello%2C%20I%E2%80%99d%20like%20to%20inquire%20about%20a%20product." 
+   class="whatsapp-float" 
+   target="_blank" 
+   id="whatsapp-link">💬</a>
+
+<script>
+  // Attempt to open WhatsApp app directly on mobile
+  document.getElementById("whatsapp-link").addEventListener("click", function (e) {
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      e.preventDefault();
+      window.location.href = "whatsapp://send?phone=96179192370&text=Hello, I’d like to inquire about a product.";
+      setTimeout(() => {
+        window.open("https://wa.me/96179192370?text=Hello%2C%20I%E2%80%99d%20like%20to%20inquire%20about%20a%20product.", "_blank");
+      }, 1500);
+    }
+  });
+</script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/96179192370?text=Hello%20Farid%20Furniture!%20I%20would%20like%20to%20ask%20about%20a%20product." 
+   class="whatsapp-float" target="_blank">
+  💬
+  <span class="whatsapp-text">Chat with us</span>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 300px;
+    right: 60px;
+    background-color: #25d366;
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 50px;
+    padding: 40px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 999;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.05);
+  }
+
+  .whatsapp-text {
+    font-size: 16px;
+    font-weight: bold;
+  }
+</style>
+
+</body>
+</html>

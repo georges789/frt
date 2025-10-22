@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farid Furniture | Collection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #faf7f1;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #fff5e6;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #b98b00;
+    }
+
+    nav a:hover {
+      color: #806600;
+    }
+
+    h1 {
+      color: #b98b00;
+      margin-top: 40px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background-color: #fff5e6;
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <h1>Our Collection</h1>
+
+  <div class="gallery">
+    <img src="./logo.jpg" alt="Furniture 1">
+    <img src="./logo.jpg" alt="Furniture 2">
+    <img src="./logo.jpg" alt="Furniture 3">
+    <img src="./logo.jpg" alt="Furniture 4">
+  </div>
+
+  <footer>
+    © 2025 Farid Furniture. All rights reserved.
+  </footer>
+</body>
+</html>
